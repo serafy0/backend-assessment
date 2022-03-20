@@ -17,4 +17,6 @@ const restaurantSchema = new mongoose.Schema({
   restaurant_id: String,
 });
 
+restaurantSchema.index({ "$**": "text" });
+
 module.exports = Restaurant = mongoose.model("Restaurant", restaurantSchema);
