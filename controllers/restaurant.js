@@ -10,7 +10,7 @@ exports.searchRestaurant = async (req, res, next) => {
       .skip(page)
       .limit(numPerPage);
 
-    if (restraunts === []) {
+    if (restraunts.length < 1) {
       return res.status(404).json({
         message: "Not Found",
       });
