@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const restrauntSchema = new mongoose.Schema({
+const restaurantSchema = new mongoose.Schema({
   adress: {
     building: String,
     street: String,
@@ -17,4 +17,4 @@ const restrauntSchema = new mongoose.Schema({
   restaurant_id: String,
 });
 
-module.exports = Restraunt = mongoose.model("Restraunt", restrauntSchema);
+module.exports = Restaurant = mongoose.model("Restaurant", restaurantSchema);

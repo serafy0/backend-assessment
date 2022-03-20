@@ -1,8 +1,8 @@
-const Restraunt = require("../models/restraunt");
+const Restaurant = require("../models/restaurant");
 const json = require("../data.json");
 let newJSONArray = [];
 const populateDB = async () => {
-  const restraunt = await Restraunt.find();
+  const restraunt = await Restaurant.find();
   if (Array.isArray(restraunt) && restraunt.length < 1) {
     for (let item of json) {
       let newObject = {};
@@ -22,7 +22,7 @@ const populateDB = async () => {
       newObject.restaurant_id = item.restaurant_id;
       newJSONArray.push(newObject);
     }
-    await Restraunt.insertMany(newJSONArray);
+    await Restaurant.insertMany(newJSONArray);
   }
 };
 
