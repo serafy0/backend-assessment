@@ -3,7 +3,7 @@ const helmet = require("helmet");
 const dotenv = require("dotenv").config();
 const router = require("./routes");
 const connectMongoDB = require("./db/mongodb");
-
+const errorHandler = require("./middleware/errorHandler");
 const app = express();
 connectMongoDB();
 
@@ -11,6 +11,7 @@ app.use(helmet());
 app.use(express.json());
 
 app.use(router);
+app.use(errorHandler);
 
 let port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`server is running on port ${port}`));
